@@ -3,6 +3,6 @@ Elevator/obj/*
 ElevatorClass/bin/*
 ElevatorClass/obj/*
 
-*exe
-*dll
-*lib
+*.exe
+*.dll
+*.lib
