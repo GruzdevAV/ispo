@@ -10,7 +10,7 @@
         <ComboBox x:Name="ComboBoxFloors" HorizontalAlignment="Left" Margin="425,40,0,0" VerticalAlignment="Top" Width="241" IsSynchronizedWithCurrentItem="True"/>
         <Button x:Name="CallButton" Content="Вызвать" HorizontalAlignment="Left" Margin="346,41,0,0" VerticalAlignment="Top" Click="CallButton_Click"/>
         <Label x:Name="FloorsLabel" Content="Введите число этажей: 2" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Width="185"/>
-        <Label x:Name="ElevatorMessage" Content="Label" HorizontalAlignment="Left" Margin="43,134,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="ElevatorMessage" Content="Label" HorizontalAlignment="Left" Margin="93,122,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Slider x:Name="SliderFloors" HorizontalAlignment="Left" Margin="21,40,0,0" VerticalAlignment="Top" Width="185" Minimum="2" Maximum="50" Value="0" SmallChange="1" TickPlacement="Both" ValueChanged="SliderFloors_ValueChanged"/>
 
     </Grid>

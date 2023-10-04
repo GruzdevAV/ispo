@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ElevatorClass
 {
     enum ElevatorDoorsConditions : short { OPENED, CLOSED }
-    enum ElevatorMovingConditions { WAIT=-2, UP, DOWN }
+    enum ElevatorMovingConditions : short{ WAIT, UP, DOWN }
     public class FloorItem
     {
         public int Number { internal set; get; }
