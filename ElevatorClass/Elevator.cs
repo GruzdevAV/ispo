@@ -21,16 +21,15 @@ namespace ElevatorClass
     public class Elevator
     {
         int _curFloor = 0;
-        FloorItem[] _floors;
         ElevatorDoorsConditions _doorsConditions = ElevatorDoorsConditions.CLOSED;
         ElevatorMovingConditions _movingCondition = ElevatorMovingConditions.WAIT;
         public int TopCalledFloor
         {
             get
             {
-                for (int i = _floors.Length - 1; i > -1; i--)
+                for (int i = Floors.Length - 1; i > -1; i--)
                 {
-                    if (_floors[i].Called) return i;
+                    if (Floors[i].Called) return i;
                 }
                 return -1;
             }
@@ -39,17 +38,17 @@ namespace ElevatorClass
         {
             get
             {
-                for (int i = 0; i < _floors.Length; i++)
+                for (int i = 0; i < Floors.Length; i++)
                 {
-                    if (_floors[i].Called) return i;
+                    if (Floors[i].Called) return i;
                 }
                 return -1;
             }
         }
         public FloorItem[] GetFloors()
         {
-            var arr = new FloorItem[_floors.Length];
-            for (int i=0;i<_floors.Length;i++)
+            var arr = new FloorItem[Floors.Length];
+            for (int i=0;i<Floors.Length;i++)
             {
                 arr[i] = new FloorItem(i) ;
             }
@@ -71,7 +70,7 @@ namespace ElevatorClass
         {
             get
             {
-                foreach (FloorItem i in _floors)
+                foreach (FloorItem i in Floors)
                 {
                     if (i.Called) return true;
                 }
@@ -80,18 +79,18 @@ namespace ElevatorClass
         }
         private bool CurFloorIsCalled
         {
-            get => _floors[_curFloor].Called;
-            set => _floors[_curFloor].Called = value;
+            get => Floors[_curFloor].Called;
+            set => Floors[_curFloor].Called = value;
         }
-        public FloorItem[] Floors { get => _floors;}
+        public FloorItem[] Floors { get; }
 
         public Elevator(int floorsNumber)
         {
             if (floorsNumber < 2) throw new Exception("Этажей должно быть как минимум 2");
-            _floors = new FloorItem[floorsNumber];
-            for (int i=0;i<_floors.Length;i++)
+            Floors = new FloorItem[floorsNumber];
+            for (int i=0;i<Floors.Length;i++)
             {
-                _floors[i] = new FloorItem(i);
+                Floors[i] = new FloorItem(i);
             }
         }
         public void Move()
@@ -126,7 +125,7 @@ namespace ElevatorClass
                                     _movingCondition= ElevatorMovingConditions.DOWN;
                                 return;
                             }
-                            if (_curFloor + 1 < _floors.Length)
+                            if (_curFloor + 1 < Floors.Length)
                                 _curFloor++;
                             else
                                 _movingCondition = ElevatorMovingConditions.WAIT;
@@ -155,18 +154,18 @@ namespace ElevatorClass
 
         private int FindClosestFloor()
         {
-            for (int i = 0; _curFloor - i > -1 || _curFloor + i < _floors.Length; i++)
+            for (int i = 0; _curFloor - i > -1 || _curFloor + i < Floors.Length; i++)
             {
-                if (_floors[_curFloor - i].Called) return _curFloor - i;
-                if (_floors[_curFloor + i].Called) return _curFloor + i;
+                if (Floors[_curFloor - i].Called) return _curFloor - i;
+                if (Floors[_curFloor + i].Called) return _curFloor + i;
             }
             return -1;
         }
 
         public void CallElevator(int floor)
         {
-            if (floor < 0 || !(floor < _floors.Length)) throw new Exception("Нельзя вызвать лифт на несуществующий этаж!");
-            _floors[floor].Called = true;
+            if (floor < 0 || !(floor < Floors.Length)) throw new Exception("Нельзя вызвать лифт на несуществующий этаж!");
+            Floors[floor].Called = true;
         }
         public override string ToString()
         {

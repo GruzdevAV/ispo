@@ -30,7 +30,6 @@ namespace Elevator
         {
             elevator = new ElevatorClass.Elevator(floors);
             FloorsLabel.Content = $"Выберите число этажей: {floors}";
-            //Dispatcher.BeginInvoke((Action)(() => ComboBoxFloors.Items.Clear()));
             ComboBoxFloors.ItemsSource = elevator.Floors;
         }
 
@@ -57,7 +56,6 @@ namespace Elevator
             var temp = ComboBoxFloors.SelectedIndex;
             ComboBoxFloors.SelectedIndex = -1;
             ComboBoxFloors.SelectedIndex = temp;
-            //ComboBoxFloors.ItemsSource = elevator.GetFloors();
         }
     }
 }
