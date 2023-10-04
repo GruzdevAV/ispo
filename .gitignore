@@ -1,7 +1,7 @@
-Elevator/bin/
-Elevator/obj/
-ElevatorClass/bin/
-ElevatorClass/obj/
+Elevator/bin/*
+Elevator/obj/*
+ElevatorClass/bin/*
+ElevatorClass/obj/*
 
 *exe
 *dll
