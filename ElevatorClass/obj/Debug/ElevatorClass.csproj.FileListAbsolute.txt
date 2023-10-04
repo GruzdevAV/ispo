@@ -1,0 +1,12 @@
+D:\HW\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\bin\Debug\ElevatorClass.dll
+D:\HW\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\bin\Debug\ElevatorClass.pdb
+D:\HW\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.csproj.AssemblyReference.cache
+D:\HW\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.csproj.CoreCompileInputs.cache
+D:\HW\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.dll
+D:\HW\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.pdb
+H:\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\bin\Debug\ElevatorClass.dll
+H:\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\bin\Debug\ElevatorClass.pdb
+H:\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.csprojAssemblyReference.cache
+H:\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.csproj.CoreCompileInputs.cache
+H:\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.dll
+H:\MDK_02.02\Lab1_elevator\Elevator\ElevatorClass\obj\Debug\ElevatorClass.pdb
