@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ElevatorClass
 {
-    enum ElevatorDoorsConditions { OPENED, CLOSED }
-    enum ElevatorMovingConditions { WAIT, UP, DOWN }
+    enum ElevatorDoorsConditions : short { OPENED, CLOSED }
+    enum ElevatorMovingConditions { WAIT=-2, UP, DOWN }
     public class FloorItem
     {
         public int Number { internal set; get; }
