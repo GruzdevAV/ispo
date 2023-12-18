@@ -1,0 +1,41 @@
+﻿<Window x:Class="Mockup.Captcha"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mockup"
+        mc:Ignorable="d"
+        Title="Captcha" Height="200" Width="350"
+         Foreground="{DynamicResource PrimaryColorBrush}" Background="{DynamicResource SecondaryColorBrush}" Loaded="Window_Loaded">
+    <Grid>
+        <Button x:Name="btn_enter_capthca" Content="Ввести" HorizontalAlignment="Left" Margin="246,134,0,0" VerticalAlignment="Top" Width="74" FontWeight="Bold" FontSize="16" Click="btn_enter_capthca_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBox x:Name="tb_captcha_entry_field" HorizontalAlignment="Left" Height="25" Margin="43,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontSize="16">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.Foreground>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <Button x:Name="btn_regenerate_captcha" Content="↻" HorizontalAlignment="Left" Margin="275,104,0,0" VerticalAlignment="Top" Width="27" FontWeight="Bold" FontSize="16" Click="btn_regenerate_captcha_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Image x:Name="img_captcha" HorizontalAlignment="Left" Height="119" Margin="10,10,0,0" VerticalAlignment="Top" Width="260"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,71 @@
+﻿<Window x:Class="Mockup.CrudProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mockup"
+        mc:Ignorable="d"
+        Title="CrudProduct" Height="450" Width="800"
+        Foreground="{DynamicResource PrimaryColorBrush}" Background="{DynamicResource SecondaryColorBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="393*"/>
+            <ColumnDefinition Width="407*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn_cancel_sell" Content="← Отменить" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" Height="20" Click="btn_go_back_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="239,135,0,280" TextWrapping="WrapWithOverflow" Text="Название:" TextAlignment="Right" Width="144"/>
+        <TextBox x:Name="tb_price" HorizontalAlignment="Left" Margin="12,160,0,0" TextWrapping="Wrap" Width="115" Height="21" VerticalAlignment="Top" Grid.Column="1">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.Foreground>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="238,160,0,254" TextWrapping="Wrap" Text="Цена:" TextAlignment="Right" Width="144"/>
+        <Button x:Name="btn_save" Content="Сохранить" HorizontalAlignment="Left" Margin="277,321,0,0" VerticalAlignment="Top" Width="272" FontWeight="Bold" Height="72" FontSize="24" Click="btn_save_Click" Grid.ColumnSpan="2">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="238,185,0,229" TextWrapping="Wrap" Text="Единица измерения:" TextAlignment="Right" Width="144"/>
+        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Margin="12,134,0,0" TextWrapping="Wrap" Width="115" Height="21" VerticalAlignment="Top" Grid.Column="1">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.Foreground>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="239,109,0,306" TextWrapping="WrapWithOverflow" Text="Актикул:" TextAlignment="Right" Width="144"/>
+        <TextBox x:Name="tb_article" HorizontalAlignment="Left" Margin="12,108,0,0" TextWrapping="Wrap" Width="115" Height="21" VerticalAlignment="Top" Grid.Column="1">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.Foreground>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <ComboBox x:Name="cb_unit" Grid.Column="1" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="12,186,0,0" VerticalAlignment="Top" Width="115"/>
+
+    </Grid>
+</Window>

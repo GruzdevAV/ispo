@@ -1,0 +1,15 @@
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\ClassLib.dll
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\ClassLib.pdb
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\obj\Debug\DatabaseController.csproj.AssemblyReference.cache
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\obj\Debug\DatabaseController.csproj.CoreCompileInputs.cache
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\obj\Debug\ClassLib.dll
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\obj\Debug\ClassLib.pdb
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\ClassLib.dll.config
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\EntityFramework.dll
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\EntityFramework.SqlServer.dll
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\EntityFramework.xml
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\EntityFramework.SqlServer.xml
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\ru\EntityFramework.resources.dll
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\obj\Debug\DatabaseController.csproj.CopyComplete
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\App_Data\DB1.mdf
+D:\HW\UP_02.01\Задание 6\ClassLib\ClassLib\bin\Debug\App_Data\DB1_log.ldf

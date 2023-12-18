@@ -1,0 +1,130 @@
+﻿<Window x:Class="Mockup.SalesList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:local="clr-namespace:Mockup"
+        mc:Ignorable="d"
+        Title="SalesList" Height="521" Width="800"
+        Foreground="{DynamicResource PrimaryColorBrush}" Background="{DynamicResource SecondaryColorBrush}" Activated="Window_Activated">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="239*"/>
+            <RowDefinition Height="62*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="tb_filter" HorizontalAlignment="Left" Margin="351,103,0,0" TextWrapping="Wrap" Width="190" Height="21" VerticalAlignment="Top" TextChanged="tb_filter_TextChanged">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.Foreground>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock x:Name="tb_showed_elements_number" HorizontalAlignment="Left" Margin="60,110,0,7" TextWrapping="Wrap" Text="Отображаются: 10/47" TextAlignment="Left" Width="144"/>
+        <Button x:Name="btn_make_new_sale" Content="+ осуществить новую продажу" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="204" FontWeight="Bold" Height="20" Click="btn_make_new_sale_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_go_back" Content="←Вернуться назад" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" Height="20" Click="btn_go_back_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_drop_filter" Content="x сбросить поиск" HorizontalAlignment="Left" Margin="562,103,0,0" Width="131" FontWeight="Bold" Height="21" VerticalAlignment="Top" Click="btn_drop_filter_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <ListView x:Name="lv_sales" Grid.Row="1" Margin="20,4,20,0" GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" >
+            <ListView.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </ListView.Foreground>
+            <ListView.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </ListView.BorderBrush>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Дата ⇅" DisplayMemberBinding="{Binding Datetime}"/>
+                    <GridViewColumn Header="Продавец ⇅" DisplayMemberBinding="{Binding Worker}"/>
+                    <GridViewColumn Header="Товар ⇅" DisplayMemberBinding="{Binding ProductName}"/>
+                    <GridViewColumn Header="Кол-во товара ⇅" DisplayMemberBinding="{Binding Sold}"/>
+                    <GridViewColumn Header="Сумма ⇅" DisplayMemberBinding="{Binding SalePrice}"/>
+                    <GridViewColumn Header="Отдел ⇅" Width="80" DisplayMemberBinding="{Binding DepartmentName}"/>
+                    <GridViewColumn>
+
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btn_make_return" Content="x сделать возврат" Click="btn_make_return_Click">
+                                    <Button.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+                                    </Button.Foreground>
+                                    <Button.BorderBrush>
+                                        <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+                                    </Button.BorderBrush>
+                                </Button>
+                            </DataTemplate>
+
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="tb_page" HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" Text="Страницы:" VerticalAlignment="Top" TextAlignment="Left" Width="67" Grid.Row="2" Height="16"/>
+        <Button x:Name="btn_first_page" Content="«" HorizontalAlignment="Left" Margin="112,16,0,0" VerticalAlignment="Top" Width="26" FontWeight="Bold" Grid.Row="2" Height="20" Click="btn_first_page_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_last_page" Content="»" HorizontalAlignment="Left" Margin="284,16,0,0" VerticalAlignment="Top" Width="26" FontWeight="Bold" Grid.Row="2" Height="20" Click="btn_last_page_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_previous_page" Content="&lt;" HorizontalAlignment="Left" Margin="143,16,0,0" VerticalAlignment="Top" Width="26" FontWeight="Bold" Grid.Row="2" Height="20" Click="btn_previous_page_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btn_next_page" Content="&gt;" HorizontalAlignment="Left" Margin="253,16,0,0" VerticalAlignment="Top" Width="26" FontWeight="Bold" Grid.Row="2" Height="20" Click="btn_next_page_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="🔎" HorizontalAlignment="Left" Margin="311,100,0,2" FontSize="16" Width="32">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Label.Foreground>
+        </Label>
+
+    </Grid>
+</Window>

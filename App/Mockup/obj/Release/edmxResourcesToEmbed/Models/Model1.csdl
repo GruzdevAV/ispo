@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UP_02_01_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ArchiveDepartments">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="DepartmentCode" Type="Int32" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlannedSoldQuantityPerDay" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="ArchiveEnterHistory">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="EntryId" Type="Int32" />
+    <Property Name="WorkerId" Type="Int32" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="IsSuccessful" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ArchiveFirstnames">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="FirstnameId" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ArchiveImages">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="ImgId" Type="Int32" />
+    <Property Name="PathToImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ArchiveMeasurementUnits">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="Id" Type="Int32" />
+    <Property Name="ShortName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MinimalQuantity" Type="Decimal" Precision="9" Scale="4" />
+  </EntityType>
+  <EntityType Name="ArchiveProducts">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="ProductArticleNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MeasurementUnitId" Type="Int32" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="ArchiveReturnedSales">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="SaleId" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ArchiveRoles">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ArchiveSales">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="SaleId" Type="Int32" />
+    <Property Name="DepartmentCode" Type="Int32" />
+    <Property Name="ProductArticle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WorkerId" Type="Int32" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="SoldQuantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="ArchiveShipmentsToAndWriteOffsFromWarehouses">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="EntryId" Type="Int32" />
+    <Property Name="DepartmentCode" Type="Int32" />
+    <Property Name="ProductId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StorageWorkerId" Type="Int32" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="Datetime" Type="DateTime" Precision="3" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="ArchiveSurnames">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="SurnameId" Type="Int32" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ArchiveTypesOfStorageMovements">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ArchiveWorkers">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedTime" Type="DateTime" Precision="3" />
+    <Property Name="WorkerId" Type="Int32" />
+    <Property Name="SurnameId" Type="Int32" />
+    <Property Name="FirstnameId" Type="Int32" />
+    <Property Name="DepartmentCode" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ImgId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="DepartmentCode" />
+    </Key>
+    <Property Name="DepartmentCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlannedSoldQuantityPerDay" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__Departmen__088B3037" FromRole="Departments" ToRole="Sales" />
+    <NavigationProperty Name="ShipmentsToAndWriteOffsFromWarehouses" Relationship="Self.FK__Shipments__Depar__0F382DC6" FromRole="Departments" ToRole="ShipmentsToAndWriteOffsFromWarehouses" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__Departm__7948ECA7" FromRole="Departments" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="EnterHistory">
+    <Key>
+      <PropertyRef Name="EntryId" />
+    </Key>
+    <Property Name="EntryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsSuccessful" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__EnterHist__Worke__03C67B1A" FromRole="EnterHistory" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Firstnames">
+    <Key>
+      <PropertyRef Name="FirstnameId" />
+    </Key>
+    <Property Name="FirstnameId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__Firstna__7854C86E" FromRole="Firstnames" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="ImgId" />
+    </Key>
+    <Property Name="ImgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PathToImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__ImgId__7B313519" FromRole="Images" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="MeasurementUnits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShortName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MinimalQuantity" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Products__Measur__7FF5EA36" FromRole="MeasurementUnits" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductArticleNumber" />
+    </Key>
+    <Property Name="ProductArticleNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MeasurementUnitId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <NavigationProperty Name="MeasurementUnits" Relationship="Self.FK__Products__Measur__7FF5EA36" FromRole="Products" ToRole="MeasurementUnits" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__ProductAr__097F5470" FromRole="Products" ToRole="Sales" />
+    <NavigationProperty Name="ShipmentsToAndWriteOffsFromWarehouses" Relationship="Self.FK__Shipments__Produ__102C51FF" FromRole="Products" ToRole="ShipmentsToAndWriteOffsFromWarehouses" />
+  </EntityType>
+  <EntityType Name="ReturnedSales">
+    <Key>
+      <PropertyRef Name="SaleId" />
+    </Key>
+    <Property Name="SaleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__ReturnedS__SaleI__15E52B55" FromRole="ReturnedSales" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__RoleId__7A3D10E0" FromRole="Roles" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="SaleId" />
+    </Key>
+    <Property Name="SaleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentCode" Type="Int32" Nullable="false" />
+    <Property Name="ProductArticle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SoldQuantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="4" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK__Sales__Departmen__088B3037" FromRole="Sales" ToRole="Departments" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Sales__ProductAr__097F5470" FromRole="Sales" ToRole="Products" />
+    <NavigationProperty Name="ReturnedSales" Relationship="Self.FK__ReturnedS__SaleI__15E52B55" FromRole="Sales" ToRole="ReturnedSales" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Sales__WorkerId__0A7378A9" FromRole="Sales" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="ShipmentsToAndWriteOffsFromWarehouses">
+    <Key>
+      <PropertyRef Name="EntryId" />
+    </Key>
+    <Property Name="EntryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentCode" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StorageWorkerId" Type="Int32" Nullable="false" />
+    <Property Name="TypeId" Type="Int32" Nullable="false" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK__Shipments__Depar__0F382DC6" FromRole="ShipmentsToAndWriteOffsFromWarehouses" ToRole="Departments" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Shipments__Produ__102C51FF" FromRole="ShipmentsToAndWriteOffsFromWarehouses" ToRole="Products" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Shipments__Stora__11207638" FromRole="ShipmentsToAndWriteOffsFromWarehouses" ToRole="Workers" />
+    <NavigationProperty Name="TypesOfStorageMovements" Relationship="Self.FK__Shipments__TypeI__12149A71" FromRole="ShipmentsToAndWriteOffsFromWarehouses" ToRole="TypesOfStorageMovements" />
+  </EntityType>
+  <EntityType Name="Surnames">
+    <Key>
+      <PropertyRef Name="SurnameId" />
+    </Key>
+    <Property Name="SurnameId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__Surname__7760A435" FromRole="Surnames" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="TypesOfStorageMovements">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ShipmentsToAndWriteOffsFromWarehouses" Relationship="Self.FK__Shipments__TypeI__12149A71" FromRole="TypesOfStorageMovements" ToRole="ShipmentsToAndWriteOffsFromWarehouses" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="WorkerId" />
+    </Key>
+    <Property Name="WorkerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SurnameId" Type="Int32" Nullable="false" />
+    <Property Name="FirstnameId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentCode" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImgId" Type="Int32" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK__Workers__Departm__7948ECA7" FromRole="Workers" ToRole="Departments" />
+    <NavigationProperty Name="EnterHistory" Relationship="Self.FK__EnterHist__Worke__03C67B1A" FromRole="Workers" ToRole="EnterHistory" />
+    <NavigationProperty Name="Firstnames" Relationship="Self.FK__Workers__Firstna__7854C86E" FromRole="Workers" ToRole="Firstnames" />
+    <NavigationProperty Name="Images" Relationship="Self.FK__Workers__ImgId__7B313519" FromRole="Workers" ToRole="Images" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK__Workers__RoleId__7A3D10E0" FromRole="Workers" ToRole="Roles" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__WorkerId__0A7378A9" FromRole="Workers" ToRole="Sales" />
+    <NavigationProperty Name="ShipmentsToAndWriteOffsFromWarehouses" Relationship="Self.FK__Shipments__Stora__11207638" FromRole="Workers" ToRole="ShipmentsToAndWriteOffsFromWarehouses" />
+    <NavigationProperty Name="Surnames" Relationship="Self.FK__Workers__Surname__7760A435" FromRole="Workers" ToRole="Surnames" />
+  </EntityType>
+  <EntityType Name="ListHistory">
+    <Key>
+      <PropertyRef Name="EntryId" />
+      <PropertyRef Name="WorkerId" />
+      <PropertyRef Name="Login" />
+      <PropertyRef Name="Datetime" />
+      <PropertyRef Name="IsSuccessful" />
+    </Key>
+    <Property Name="EntryId" Type="Int32" Nullable="false" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsSuccessful" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListSales">
+    <Key>
+      <PropertyRef Name="SaleId" />
+      <PropertyRef Name="Datetime" />
+      <PropertyRef Name="Worker" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="Sold" />
+      <PropertyRef Name="DepartmentName" />
+      <PropertyRef Name="DepartmentCode" />
+      <PropertyRef Name="WorkerId" />
+      <PropertyRef Name="ProductArticle" />
+      <PropertyRef Name="SoldQuantity" />
+    </Key>
+    <Property Name="SaleId" Type="Int32" Nullable="false" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Worker" Type="String" MaxLength="101" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sold" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SalePrice" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentCode" Type="Int32" Nullable="false" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="ProductArticle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoldQuantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListShopments">
+    <Key>
+      <PropertyRef Name="EntryId" />
+      <PropertyRef Name="Datetime" />
+      <PropertyRef Name="Worker" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="Shipped" />
+      <PropertyRef Name="DepartmentName" />
+      <PropertyRef Name="DepartmentCode" />
+      <PropertyRef Name="ProductArticleNumber" />
+    </Key>
+    <Property Name="EntryId" Type="Int32" Nullable="false" />
+    <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Worker" Type="String" MaxLength="101" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Shipped" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentCode" Type="Int32" Nullable="false" />
+    <Property Name="ProductArticleNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Sales__Departmen__088B3037">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentCode" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shipments__Depar__0F382DC6">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="ShipmentsToAndWriteOffsFromWarehouses" Type="Self.ShipmentsToAndWriteOffsFromWarehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentCode" />
+      </Principal>
+      <Dependent Role="ShipmentsToAndWriteOffsFromWarehouses">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__Departm__7948ECA7">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="DepartmentCode" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="DepartmentCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EnterHist__Worke__03C67B1A">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="EnterHistory" Type="Self.EnterHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="EnterHistory">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__Firstna__7854C86E">
+    <End Role="Firstnames" Type="Self.Firstnames" Multiplicity="1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firstnames">
+        <PropertyRef Name="FirstnameId" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="FirstnameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__ImgId__7B313519">
+    <End Role="Images" Type="Self.Images" Multiplicity="0..1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Images">
+        <PropertyRef Name="ImgId" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="ImgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Measur__7FF5EA36">
+    <End Role="MeasurementUnits" Type="Self.MeasurementUnits" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MeasurementUnits">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="MeasurementUnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sales__ProductAr__097F5470">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductArticleNumber" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="ProductArticle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shipments__Produ__102C51FF">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ShipmentsToAndWriteOffsFromWarehouses" Type="Self.ShipmentsToAndWriteOffsFromWarehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductArticleNumber" />
+      </Principal>
+      <Dependent Role="ShipmentsToAndWriteOffsFromWarehouses">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReturnedS__SaleI__15E52B55">
+    <End Role="Sales" Type="Self.Sales" Multiplicity="1" />
+    <End Role="ReturnedSales" Type="Self.ReturnedSales" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Sales">
+        <PropertyRef Name="SaleId" />
+      </Principal>
+      <Dependent Role="ReturnedSales">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__RoleId__7A3D10E0">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sales__WorkerId__0A7378A9">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shipments__Stora__11207638">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="ShipmentsToAndWriteOffsFromWarehouses" Type="Self.ShipmentsToAndWriteOffsFromWarehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="ShipmentsToAndWriteOffsFromWarehouses">
+        <PropertyRef Name="StorageWorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shipments__TypeI__12149A71">
+    <End Role="TypesOfStorageMovements" Type="Self.TypesOfStorageMovements" Multiplicity="1" />
+    <End Role="ShipmentsToAndWriteOffsFromWarehouses" Type="Self.ShipmentsToAndWriteOffsFromWarehouses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesOfStorageMovements">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="ShipmentsToAndWriteOffsFromWarehouses">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__Surname__7760A435">
+    <End Role="Surnames" Type="Self.Surnames" Multiplicity="1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Surnames">
+        <PropertyRef Name="SurnameId" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="SurnameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UP_02_01_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ArchiveDepartments" EntityType="Self.ArchiveDepartments" />
+    <EntitySet Name="ArchiveEnterHistory" EntityType="Self.ArchiveEnterHistory" />
+    <EntitySet Name="ArchiveFirstnames" EntityType="Self.ArchiveFirstnames" />
+    <EntitySet Name="ArchiveImages" EntityType="Self.ArchiveImages" />
+    <EntitySet Name="ArchiveMeasurementUnits" EntityType="Self.ArchiveMeasurementUnits" />
+    <EntitySet Name="ArchiveProducts" EntityType="Self.ArchiveProducts" />
+    <EntitySet Name="ArchiveReturnedSales" EntityType="Self.ArchiveReturnedSales" />
+    <EntitySet Name="ArchiveRoles" EntityType="Self.ArchiveRoles" />
+    <EntitySet Name="ArchiveSales" EntityType="Self.ArchiveSales" />
+    <EntitySet Name="ArchiveShipmentsToAndWriteOffsFromWarehouses" EntityType="Self.ArchiveShipmentsToAndWriteOffsFromWarehouses" />
+    <EntitySet Name="ArchiveSurnames" EntityType="Self.ArchiveSurnames" />
+    <EntitySet Name="ArchiveTypesOfStorageMovements" EntityType="Self.ArchiveTypesOfStorageMovements" />
+    <EntitySet Name="ArchiveWorkers" EntityType="Self.ArchiveWorkers" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" />
+    <EntitySet Name="EnterHistory" EntityType="Self.EnterHistory" />
+    <EntitySet Name="Firstnames" EntityType="Self.Firstnames" />
+    <EntitySet Name="Images" EntityType="Self.Images" />
+    <EntitySet Name="MeasurementUnits" EntityType="Self.MeasurementUnits" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="ReturnedSales" EntityType="Self.ReturnedSales" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Sales" EntityType="Self.Sales" />
+    <EntitySet Name="ShipmentsToAndWriteOffsFromWarehouses" EntityType="Self.ShipmentsToAndWriteOffsFromWarehouses" />
+    <EntitySet Name="Surnames" EntityType="Self.Surnames" />
+    <EntitySet Name="TypesOfStorageMovements" EntityType="Self.TypesOfStorageMovements" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" />
+    <EntitySet Name="ListHistory" EntityType="Self.ListHistory" />
+    <EntitySet Name="ListSales" EntityType="Self.ListSales" />
+    <EntitySet Name="ListShopments" EntityType="Self.ListShopments" />
+    <AssociationSet Name="FK__Sales__Departmen__088B3037" Association="Self.FK__Sales__Departmen__088B3037">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shipments__Depar__0F382DC6" Association="Self.FK__Shipments__Depar__0F382DC6">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="ShipmentsToAndWriteOffsFromWarehouses" EntitySet="ShipmentsToAndWriteOffsFromWarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__Departm__7948ECA7" Association="Self.FK__Workers__Departm__7948ECA7">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EnterHist__Worke__03C67B1A" Association="Self.FK__EnterHist__Worke__03C67B1A">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="EnterHistory" EntitySet="EnterHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__Firstna__7854C86E" Association="Self.FK__Workers__Firstna__7854C86E">
+      <End Role="Firstnames" EntitySet="Firstnames" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__ImgId__7B313519" Association="Self.FK__Workers__ImgId__7B313519">
+      <End Role="Images" EntitySet="Images" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Measur__7FF5EA36" Association="Self.FK__Products__Measur__7FF5EA36">
+      <End Role="MeasurementUnits" EntitySet="MeasurementUnits" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sales__ProductAr__097F5470" Association="Self.FK__Sales__ProductAr__097F5470">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shipments__Produ__102C51FF" Association="Self.FK__Shipments__Produ__102C51FF">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ShipmentsToAndWriteOffsFromWarehouses" EntitySet="ShipmentsToAndWriteOffsFromWarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReturnedS__SaleI__15E52B55" Association="Self.FK__ReturnedS__SaleI__15E52B55">
+      <End Role="Sales" EntitySet="Sales" />
+      <End Role="ReturnedSales" EntitySet="ReturnedSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__RoleId__7A3D10E0" Association="Self.FK__Workers__RoleId__7A3D10E0">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sales__WorkerId__0A7378A9" Association="Self.FK__Sales__WorkerId__0A7378A9">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shipments__Stora__11207638" Association="Self.FK__Shipments__Stora__11207638">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="ShipmentsToAndWriteOffsFromWarehouses" EntitySet="ShipmentsToAndWriteOffsFromWarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shipments__TypeI__12149A71" Association="Self.FK__Shipments__TypeI__12149A71">
+      <End Role="TypesOfStorageMovements" EntitySet="TypesOfStorageMovements" />
+      <End Role="ShipmentsToAndWriteOffsFromWarehouses" EntitySet="ShipmentsToAndWriteOffsFromWarehouses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__Surname__7760A435" Association="Self.FK__Workers__Surname__7760A435">
+      <End Role="Surnames" EntitySet="Surnames" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0fce6ef38f3145829e7569b92b022d2b" Name="Diagram1">
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveDepartment" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveEnterHistory" Width="1.5" PointX="8.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveFirstname" Width="1.5" PointX="8.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveImage" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveMeasurementUnit" Width="1.5" PointX="7.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveProduct" Width="1.5" PointX="9.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveReturnedSale" Width="1.5" PointX="10.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveRole" Width="1.5" PointX="10.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveSale" Width="1.5" PointX="11.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveShipmentsToAndWriteOffsFromWarehous" Width="1.5" PointX="12.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveSurname" Width="1.5" PointX="12.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveTypesOfStorageMovement" Width="1.5" PointX="7.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ArchiveWorker" Width="1.5" PointX="13.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Department" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.EnterHistory" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Firstname" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Image" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.MeasurementUnit" Width="1.5" PointX="1.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Role" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Sale" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ShipmentsToAndWriteOffsFromWarehous" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Surname" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.TypesOfStorageMovement" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.Worker" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ListHistory" Width="1.5" PointX="9.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ListSale" Width="1.5" PointX="13.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ListShopment" Width="1.5" PointX="14.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Sales__Departmen__088B3037" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Shipments__Depar__0F382DC6" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Workers__Departm__7948ECA7" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__EnterHist__Worke__03C67B1A" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Workers__Firstna__7854C86E" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Workers__ImgId__7B313519" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Products__Measur__7FF5EA36" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Sales__ProductAr__097F5470" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Shipments__Produ__102C51FF" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Workers__RoleId__7A3D10E0" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Sales__WorkerId__0A7378A9" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Shipments__Stora__11207638" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Shipments__TypeI__12149A71" ManuallyRouted="false" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__Workers__Surname__7760A435" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ListProductsOfDepartment" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ListProduct" Width="1.5" PointX="4.375" PointY="16.75" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ListWorker" Width="1.5" PointX="6.375" PointY="16.75" />
+        <EntityTypeShape EntityType="UP_02_01_DBModel.ReturnedSale" Width="1.5" PointX="5.25" PointY="11" />
+        <AssociationConnector Association="UP_02_01_DBModel.FK__ReturnedS__SaleI__6D381B7D" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

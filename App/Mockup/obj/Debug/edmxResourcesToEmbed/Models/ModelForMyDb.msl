@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище UP_02_01_DBModelContainer" CdmEntityContainer="UP_02_01_DBEntities">
+    <EntitySetMapping Name="ArchiveDepartments">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveDepartment">
+        <MappingFragment StoreEntitySet="ArchiveDepartments">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PlannedSoldQuantityPerDay" ColumnName="PlannedSoldQuantityPerDay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveEnterHistories">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveEnterHistory">
+        <MappingFragment StoreEntitySet="ArchiveEnterHistory">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="IsSuccessful" ColumnName="IsSuccessful" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveFirstnames">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveFirstname">
+        <MappingFragment StoreEntitySet="ArchiveFirstnames">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="FirstnameId" ColumnName="FirstnameId" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveImages">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveImage">
+        <MappingFragment StoreEntitySet="ArchiveImages">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="ImgId" ColumnName="ImgId" />
+          <ScalarProperty Name="PathToImage" ColumnName="PathToImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveMeasurementUnits">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveMeasurementUnit">
+        <MappingFragment StoreEntitySet="ArchiveMeasurementUnits">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MinimalQuantity" ColumnName="MinimalQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveProducts">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveProduct">
+        <MappingFragment StoreEntitySet="ArchiveProducts">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="ProductArticleNumber" ColumnName="ProductArticleNumber" />
+          <ScalarProperty Name="MeasurementUnitId" ColumnName="MeasurementUnitId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveReturnedSales">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveReturnedSale">
+        <MappingFragment StoreEntitySet="ArchiveReturnedSales">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveRoles">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveRole">
+        <MappingFragment StoreEntitySet="ArchiveRoles">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveSales">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveSale">
+        <MappingFragment StoreEntitySet="ArchiveSales">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ProductArticle" ColumnName="ProductArticle" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveShipmentsToAndWriteOffsFromWarehouses">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveShipmentsToAndWriteOffsFromWarehous">
+        <MappingFragment StoreEntitySet="ArchiveShipmentsToAndWriteOffsFromWarehouses">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="StorageWorkerId" ColumnName="StorageWorkerId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveSurnames">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveSurname">
+        <MappingFragment StoreEntitySet="ArchiveSurnames">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="SurnameId" ColumnName="SurnameId" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveTypesOfStorageMovements">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveTypesOfStorageMovement">
+        <MappingFragment StoreEntitySet="ArchiveTypesOfStorageMovements">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchiveWorkers">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ArchiveWorker">
+        <MappingFragment StoreEntitySet="ArchiveWorkers">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="DeletedTime" ColumnName="DeletedTime" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="SurnameId" ColumnName="SurnameId" />
+          <ScalarProperty Name="FirstnameId" ColumnName="FirstnameId" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ImgId" ColumnName="ImgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PlannedSoldQuantityPerDay" ColumnName="PlannedSoldQuantityPerDay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterHistories">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.EnterHistory">
+        <MappingFragment StoreEntitySet="EnterHistory">
+          <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="IsSuccessful" ColumnName="IsSuccessful" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firstnames">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Firstname">
+        <MappingFragment StoreEntitySet="Firstnames">
+          <ScalarProperty Name="FirstnameId" ColumnName="FirstnameId" />
+          <ScalarProperty Name="Firstname1" ColumnName="Firstname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Image">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="ImgId" ColumnName="ImgId" />
+          <ScalarProperty Name="PathToImage" ColumnName="PathToImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeasurementUnits">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.MeasurementUnit">
+        <MappingFragment StoreEntitySet="MeasurementUnits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MinimalQuantity" ColumnName="MinimalQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductArticleNumber" ColumnName="ProductArticleNumber" />
+          <ScalarProperty Name="MeasurementUnitId" ColumnName="MeasurementUnitId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Sale">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ProductArticle" ColumnName="ProductArticle" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShipmentsToAndWriteOffsFromWarehouses">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ShipmentsToAndWriteOffsFromWarehous">
+        <MappingFragment StoreEntitySet="ShipmentsToAndWriteOffsFromWarehouses">
+          <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="StorageWorkerId" ColumnName="StorageWorkerId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Surnames">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Surname">
+        <MappingFragment StoreEntitySet="Surnames">
+          <ScalarProperty Name="SurnameId" ColumnName="SurnameId" />
+          <ScalarProperty Name="Surname1" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesOfStorageMovements">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.TypesOfStorageMovement">
+        <MappingFragment StoreEntitySet="TypesOfStorageMovements">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.Worker">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="SurnameId" ColumnName="SurnameId" />
+          <ScalarProperty Name="FirstnameId" ColumnName="FirstnameId" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ImgId" ColumnName="ImgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListHistories">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ListHistory">
+        <MappingFragment StoreEntitySet="ListHistory">
+          <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="IsSuccessful" ColumnName="IsSuccessful" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListSales">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ListSale">
+        <MappingFragment StoreEntitySet="ListSales">
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Worker" ColumnName="Worker" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Sold" ColumnName="Sold" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="ProductArticle" ColumnName="ProductArticle" />
+          <ScalarProperty Name="SoldQuantity" ColumnName="SoldQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListShopments">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ListShopment">
+        <MappingFragment StoreEntitySet="ListShopments">
+          <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Worker" ColumnName="Worker" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Shipped" ColumnName="Shipped" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ProductArticleNumber" ColumnName="ProductArticleNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListProductsOfDepartments">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ListProductsOfDepartment">
+        <MappingFragment StoreEntitySet="ListProductsOfDepartment">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="N1" ColumnName="N1" />
+          <ScalarProperty Name="SUM_Quantity" ColumnName="SUM_Quantity" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListProducts">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ListProduct">
+        <MappingFragment StoreEntitySet="ListProducts">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="ProductArticleNumber" ColumnName="ProductArticleNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListWorkers">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ListWorker">
+        <MappingFragment StoreEntitySet="ListWorkers">
+          <ScalarProperty Name="PathToImage" ColumnName="PathToImage" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReturnedSales">
+      <EntityTypeMapping TypeName="UP_02_01_DBModel.ReturnedSale">
+        <MappingFragment StoreEntitySet="ReturnedSales">
+          <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

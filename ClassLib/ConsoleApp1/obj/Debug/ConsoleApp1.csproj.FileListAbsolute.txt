@@ -1,0 +1,13 @@
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\ClassLib.dll
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\ClassLib.pdb
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\ClassLib.dll.config
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\App_Data\DB1.mdf
+D:\HW\UP_02.01\Задание 6\ClassLib\ConsoleApp1\bin\Debug\App_Data\DB1_log.ldf

@@ -1,0 +1,51 @@
+﻿<Window x:Class="Mockup.ShipIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mockup"
+        mc:Ignorable="d"
+        Title="ShipIn" Height="450" Width="800"
+        Foreground="{DynamicResource PrimaryColorBrush}" Background="{DynamicResource SecondaryColorBrush}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="393*"/>
+            <ColumnDefinition Width="407*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn_cancel_sell" Content="← Отменить" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top" Width="130" FontWeight="Bold" Height="20" Click="btn_go_back_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="239,135,0,280" TextWrapping="WrapWithOverflow" Text="Название:" TextAlignment="Right" Width="144"/>
+        <TextBlock HorizontalAlignment="Left" Margin="238,160,0,254" TextWrapping="Wrap" Text="Цена:" TextAlignment="Right" Width="144"/>
+        <Button x:Name="btn_shipin" Content="Поставить" HorizontalAlignment="Left" Margin="277,321,0,0" VerticalAlignment="Top" Width="272" FontWeight="Bold" Height="72" FontSize="24" Grid.ColumnSpan="2" Click="btn_shipin_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="239,109,0,306" TextWrapping="WrapWithOverflow" Text="Актикул:" TextAlignment="Right" Width="144"/>
+        <ComboBox x:Name="cb_article" DisplayMemberPath="ProductArticleNumber" Grid.Column="1" HorizontalAlignment="Left" Margin="12,106,0,0" VerticalAlignment="Top" Width="115" SelectionChanged="cb_article_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="239,185,0,229" TextWrapping="Wrap" Text="Кол-во для списания:" TextAlignment="Right" Width="144"/>
+        <TextBox x:Name="tb_value" HorizontalAlignment="Left" Margin="12,184,0,0" TextWrapping="Wrap" Width="115" Height="21" VerticalAlignment="Top" Grid.Column="1">
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.Foreground>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource AccentColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource PrimaryColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock x:Name="tb_name" Grid.Column="1" HorizontalAlignment="Left" Margin="12,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBlock x:Name="tb_price" Grid.Column="1" HorizontalAlignment="Left" Margin="12,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+
+    </Grid>
+</Window>
