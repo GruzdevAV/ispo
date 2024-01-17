@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+@using Lab4.Models
+@model Lab4.Models.AfterOrderedModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order done</title>
+</head>
+<body>
+    <div>
+        <h3>Товары заказаны</h3>
+        <p>Данные заказа:</p>
+        <p>Name: @Model.Order.Name</p>
+        <p>Line1: @Model.Order.Line1</p>
+        <p>Line2: @Model.Order.Line2</p>
+        <p>Line3: @Model.Order.Line3</p>
+        <p>City: @Model.Order.Name</p>
+        <p>State: @Model.Order.Name</p>
+        <p>Zip: @Model.Order.Name</p>
+        <p>Country: @Model.Order.Name</p>
+        <p>GiftWrap: @Model.Order.GiftWrap</p>
+        <br />
+        <p>Список товаров:</p>
+        @foreach (var line in ViewBag.cartLines)
+        {
+            <p>Название товара: @line.Product.Name</p>
+            <p>Количество товара: @line.Quantity</p>
+            <br />
+        }
+    </div>
+</body>
+</html>

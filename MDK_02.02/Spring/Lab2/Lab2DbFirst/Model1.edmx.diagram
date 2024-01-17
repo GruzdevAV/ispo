@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d9b1f2662ed47c1a3f17c31709d5bef" Name="Diagram1">
+        <EntityTypeShape EntityType="MDK_02_02_GRUZDEVModel.Cours" Width="1.5" PointX="7.625" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDK_02_02_GRUZDEVModel.Firstname" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDK_02_02_GRUZDEVModel.StudentCours" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDK_02_02_GRUZDEVModel.Student" Width="1.5" PointX="3.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDK_02_02_GRUZDEVModel.Surname" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDK_02_02_GRUZDEVModel.Teacher" Width="1.5" PointX="3.5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_Courses_to_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_StudentCourses_to_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_Students_to_Firstnames" ManuallyRouted="false" />
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_Teachers_to_Firstnames" ManuallyRouted="false" />
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_StudentCourses_to_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_Students_to_Surnames" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="MDK_02_02_GRUZDEVModel.FK_Teachers_to_Surnames" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

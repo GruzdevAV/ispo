@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+@using WebApp.Models
+@model WebApp.Models.DrinkData
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>
+            Drink type: @Html.DropDownListFor(m => m.DrinkType,
+                       new SelectList(Enum.GetValues(typeof(DrinkType))),
+                       "Select Drink Category")
+        </p>
+        <p> Milk: @Html.TextBoxFor(x=>x.Milk)</p>
+        <p> Sugar: @Html.TextBoxFor(x=>x.Sugar)</p>
+        <input type="submit" value="Ok" />
+        <p>Переданный текст: @ViewBag.AAAAAAAA</p>
+    }
+</body>
+</html>

@@ -1,0 +1,34 @@
+спуск
+если текущий этаж - выход, тогда прекратить спуск и открыть двери
+если текущий этаж - нижний, не двигаться
+подъём
+если текущий этаж вызван, тогда открыть двери
+если текущий этаж - выход, тогда прекратить подъём и открыть двери
+ждать
+если 
+
+
+conditions:
+	doorsCondition : OPENED, CLOSED
+	movingCondition : UP, DOWN, WAIT
+
+funcs:
+	CloseTheDoors:
+		doorsCondition=CLOSED
+	OpenTheDoors:
+		doorsCondition=OPENED
+	Move:
+		if doorsCondition=OPENED then CloseTheDoors and return
+		if movingCondition=WAIT:
+			findClosestFloor and if it is current OpenTheDoors else move
+		if movingCondition=DOWN:
+			if currentFloor = lowestCalledFloor:
+				floors[lowestCalledFloor]=false
+				OpenTheDoors
+				movingCondition=WAIT
+			
+	CallTheElevator:
+		calls the elevator to the chosen floor
+		if movingCondition is WAIT:
+			doorsCondition=CLOSED
+			movingCondition=UP or DOWN depends on where the floor is

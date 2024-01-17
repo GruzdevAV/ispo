@@ -1,0 +1,27 @@
+﻿<Window x:Class="Lab1_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Внести деньги" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
+        <TextBox x:Name="InputMoney" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" Width="120" PreviewTextInput="InputMoney_PreviewTextInput"/>
+        <RadioButton x:Name="RBAmericano" Content="Американо" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Checked="RB_Checked"/>
+        <RadioButton x:Name="RBCappuccino" Content="Капучино" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Checked="RB_Checked"/>
+        <RadioButton x:Name="RBEspresso" Content="Эспрессо" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Checked="RB_Checked"/>
+        <RadioButton x:Name="RBCocoa" Content="Какао" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Checked="RB_Checked"/>
+        <CheckBox x:Name="OptionSugar" Content="Сахар" HorizontalAlignment="Left" Margin="127,104,0,0" VerticalAlignment="Top" Click="Options_Click"/>
+        <CheckBox x:Name="OptionMilk" Content="Молоко" HorizontalAlignment="Left" Margin="127,124,0,0" VerticalAlignment="Top" Click="Options_Click"/>
+        <Button x:Name="BtnOK" Content="ОК" HorizontalAlignment="Left" Margin="40,210,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" Click="BtnOK_Click"/>
+        <Label x:Name="InputedMoney" Content="Внесённая сумма:" HorizontalAlignment="Left" Margin="257,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ChangeMoney" Content="Сдача:" HorizontalAlignment="Left" Margin="257,32,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="BeveragePrice" Content="Цена напитка:" HorizontalAlignment="Left" Margin="257,93,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Image x:Name="ImgBeverage" HorizontalAlignment="Left" Height="247" Margin="291,144,0,0" VerticalAlignment="Top" Width="329"/>
+        <Image x:Name="ImgSugar" HorizontalAlignment="Left" Height="96" Margin="652,252,0,0" VerticalAlignment="Top" Width="130" Source="sugar.png" Stretch="Fill" Visibility="Hidden"/>
+        <Image x:Name="ImgMilk" HorizontalAlignment="Left" Height="143" Margin="666,104,0,0" VerticalAlignment="Top" Width="116" Source="milk.png" Visibility="Hidden"/>
+
+    </Grid>
+</Window>
