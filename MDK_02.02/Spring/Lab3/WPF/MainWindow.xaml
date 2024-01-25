@@ -1,0 +1,53 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="WPF.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="191*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="77*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="498*"/>
+            <ColumnDefinition Width="167*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Поставщик" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="22" Height="39" Width="122"/>
+        <Label Content="Покупатель" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="22" Grid.Row="1" Height="39" Width="127"/>
+        <TextBox x:Name="tbox_supplier" Height="35" Margin="10,2,0,2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Grid.Column="1"/>
+        <TextBox x:Name="tbox_buyer" Height="35" Margin="10,2,0,2" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="22" Grid.Column="1" Grid.Row="1"/>
+        <DataGrid x:Name="lv_table" Margin="0,0,0,0" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="10,10,0,10" AutoGenerateColumns="False" CanUserResizeColumns="True" AlternationCount="2" AlternatingRowBackground="Coral" CellEditEnding="lv_table_CellEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=Number}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Товар" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Path=Quantity, StringFormat=\{0\} кг}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price, StringFormat=\{0\} руб./кг}"/>
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Path=Sum, StringFormat=\{0\} руб.}" IsReadOnly="True"  />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Итого:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="45"/>
+        <TextBlock x:Name="tblock_total" HorizontalAlignment="Left" Margin="25,10,0,0" Grid.Row="4" TextWrapping="Wrap" Text="н руб." VerticalAlignment="Top" FontSize="20" Height="27" Width="54"/>
+        <Button x:Name="btn_makeDoc" Content="Сформировать документ Word" Grid.Column="1" HorizontalAlignment="Center" Margin="141,10,109,0" Grid.Row="5" VerticalAlignment="Top" Width="248" Background="Coral" BorderThickness="2" BorderBrush="#FF933838" FontSize="16" Height="27" Click="btn_makeDoc_Click">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="2" Opacity="0.5"/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="l_orderNumber" Content="Заказ №%d" Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" FontSize="18" Height="34" Width="105"/>
+        <Label x:Name="l_date" Grid.Column="2" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Grid.Row="1" FontSize="18" Height="34" Width="95" Content="1" />
+        <Button x:Name="btn_makeExcel" Content="Сформировать документ Excel" Grid.Column="1" HorizontalAlignment="Center" Margin="141,40,109,0" Grid.Row="5" VerticalAlignment="Top" Width="248" Background="Coral" BorderThickness="2" BorderBrush="#FF933838" FontSize="16" Height="27" Click="Btn_makeExcel_Click">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="2" Opacity="0.5"/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
