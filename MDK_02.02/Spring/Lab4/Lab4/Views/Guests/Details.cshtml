@@ -1,0 +1,26 @@
+﻿@model Lab4.Models.Guest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Guest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GUEST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GUEST_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GUEST_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище Lab4DbVers1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Guests">
+          <Key>
+            <PropertyRef Name="GUEST_ID" />
+          </Key>
+          <Property Name="GUEST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUEST_NAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GuestsInRooms">
+          <Key>
+            <PropertyRef Name="ROOM_ID" />
+            <PropertyRef Name="GUEST_ID" />
+          </Key>
+          <Property Name="ROOM_ID" Type="int" Nullable="false" />
+          <Property Name="GUEST_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="ROOM_ID" />
+          </Key>
+          <Property Name="ROOM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROOM_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_GuestsInRooms_to_Guests">
+          <End Role="Guests" Type="Self.Guests" Multiplicity="1" />
+          <End Role="GuestsInRooms" Type="Self.GuestsInRooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guests">
+              <PropertyRef Name="GUEST_ID" />
+            </Principal>
+            <Dependent Role="GuestsInRooms">
+              <PropertyRef Name="GUEST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestsInRooms_to_Rooms">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="GuestsInRooms" Type="Self.GuestsInRooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="ROOM_ID" />
+            </Principal>
+            <Dependent Role="GuestsInRooms">
+              <PropertyRef Name="ROOM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Lab4DbVers1ModelContainer">
+          <EntitySet Name="Guests" EntityType="Self.Guests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GuestsInRooms" EntityType="Self.GuestsInRooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_GuestsInRooms_to_Guests" Association="Self.FK_GuestsInRooms_to_Guests">
+            <End Role="Guests" EntitySet="Guests" />
+            <End Role="GuestsInRooms" EntitySet="GuestsInRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestsInRooms_to_Rooms" Association="Self.FK_GuestsInRooms_to_Rooms">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="GuestsInRooms" EntitySet="GuestsInRooms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lab4DbVers1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="GUEST_ID" />
+          </Key>
+          <Property Name="GUEST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUEST_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Rooms" Relationship="Self.GuestsInRooms" FromRole="Guests" ToRole="Rooms" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="ROOM_ID" />
+          </Key>
+          <Property Name="ROOM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROOM_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Guests" Relationship="Self.GuestsInRooms" FromRole="Rooms" ToRole="Guests" />
+        </EntityType>
+        <Association Name="GuestsInRooms">
+          <End Role="Guests" Type="Self.Guest" Multiplicity="*" />
+          <End Role="Rooms" Type="Self.Room" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Lab4DbVers1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Guests" EntityType="Self.Guest" />
+          <EntitySet Name="Rooms" EntityType="Self.Room" />
+          <AssociationSet Name="GuestsInRooms" Association="Self.GuestsInRooms">
+            <End Role="Guests" EntitySet="Guests" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Lab4DbVers1ModelContainer" CdmEntityContainer="Lab4DbVers1Entities">
+          <EntitySetMapping Name="Guests">
+            <EntityTypeMapping TypeName="Lab4DbVers1Model.Guest">
+              <MappingFragment StoreEntitySet="Guests">
+                <ScalarProperty Name="GUEST_ID" ColumnName="GUEST_ID" />
+                <ScalarProperty Name="GUEST_NAME" ColumnName="GUEST_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="Lab4DbVers1Model.Room">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+                <ScalarProperty Name="ROOM_NAME" ColumnName="ROOM_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="GuestsInRooms" TypeName="Lab4DbVers1Model.GuestsInRooms" StoreEntitySet="GuestsInRooms">
+            <EndProperty Name="Guests">
+              <ScalarProperty Name="GUEST_ID" ColumnName="GUEST_ID" />
+            </EndProperty>
+            <EndProperty Name="Rooms">
+              <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
