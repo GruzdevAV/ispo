@@ -14,9 +14,9 @@
         </EntityType>
         <EntityType Name="GuestsInRooms">
           <Key>
-            <PropertyRef Name="ROOM_ID" />
-            <PropertyRef Name="GUEST_ID" />
+            <PropertyRef Name="ID" />
           </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ROOM_ID" Type="int" Nullable="false" />
           <Property Name="GUEST_ID" Type="int" Nullable="false" />
         </EntityType>
@@ -27,7 +27,7 @@
           <Property Name="ROOM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ROOM_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
-        <Association Name="FK_GuestsInRooms_to_Guests">
+        <Association Name="FK__GuestsInR__GUEST__4AB81AF0">
           <End Role="Guests" Type="Self.Guests" Multiplicity="1" />
           <End Role="GuestsInRooms" Type="Self.GuestsInRooms" Multiplicity="*" />
           <ReferentialConstraint>
@@ -39,7 +39,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GuestsInRooms_to_Rooms">
+        <Association Name="FK__GuestsInR__ROOM___49C3F6B7">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
           <End Role="GuestsInRooms" Type="Self.GuestsInRooms" Multiplicity="*" />
           <ReferentialConstraint>
@@ -55,11 +55,11 @@
           <EntitySet Name="Guests" EntityType="Self.Guests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GuestsInRooms" EntityType="Self.GuestsInRooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_GuestsInRooms_to_Guests" Association="Self.FK_GuestsInRooms_to_Guests">
+          <AssociationSet Name="FK__GuestsInR__GUEST__4AB81AF0" Association="Self.FK__GuestsInR__GUEST__4AB81AF0">
             <End Role="Guests" EntitySet="Guests" />
             <End Role="GuestsInRooms" EntitySet="GuestsInRooms" />
           </AssociationSet>
-          <AssociationSet Name="FK_GuestsInRooms_to_Rooms" Association="Self.FK_GuestsInRooms_to_Rooms">
+          <AssociationSet Name="FK__GuestsInR__ROOM___49C3F6B7" Association="Self.FK__GuestsInR__ROOM___49C3F6B7">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="GuestsInRooms" EntitySet="GuestsInRooms" />
           </AssociationSet>
@@ -68,34 +68,69 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Lab4DbVers1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Lab4DbVers1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Guests" EntityType="Lab4DbVers1Model.Guest" />
+          <EntitySet Name="GuestsInRooms" EntityType="Lab4DbVers1Model.GuestsInRoom" />
+          <EntitySet Name="Rooms" EntityType="Lab4DbVers1Model.Room" />
+          <AssociationSet Name="FK__GuestsInR__GUEST__4AB81AF0" Association="Lab4DbVers1Model.FK__GuestsInR__GUEST__4AB81AF0">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="GuestsInRoom" EntitySet="GuestsInRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GuestsInR__ROOM___49C3F6B7" Association="Lab4DbVers1Model.FK__GuestsInR__ROOM___49C3F6B7">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="GuestsInRoom" EntitySet="GuestsInRooms" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Guest">
           <Key>
             <PropertyRef Name="GUEST_ID" />
           </Key>
           <Property Name="GUEST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GUEST_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Rooms" Relationship="Self.GuestsInRooms" FromRole="Guests" ToRole="Rooms" />
+          <Property Name="GUEST_NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GuestsInRooms" Relationship="Lab4DbVers1Model.FK__GuestsInR__GUEST__4AB81AF0" FromRole="Guest" ToRole="GuestsInRoom" />
+        </EntityType>
+        <EntityType Name="GuestsInRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROOM_ID" Type="Int32" Nullable="false" />
+          <Property Name="GUEST_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Guest" Relationship="Lab4DbVers1Model.FK__GuestsInR__GUEST__4AB81AF0" FromRole="GuestsInRoom" ToRole="Guest" />
+          <NavigationProperty Name="Room" Relationship="Lab4DbVers1Model.FK__GuestsInR__ROOM___49C3F6B7" FromRole="GuestsInRoom" ToRole="Room" />
         </EntityType>
         <EntityType Name="Room">
           <Key>
             <PropertyRef Name="ROOM_ID" />
           </Key>
           <Property Name="ROOM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ROOM_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Guests" Relationship="Self.GuestsInRooms" FromRole="Rooms" ToRole="Guests" />
+          <Property Name="ROOM_NAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GuestsInRooms" Relationship="Lab4DbVers1Model.FK__GuestsInR__ROOM___49C3F6B7" FromRole="Room" ToRole="GuestsInRoom" />
         </EntityType>
-        <Association Name="GuestsInRooms">
-          <End Role="Guests" Type="Self.Guest" Multiplicity="*" />
-          <End Role="Rooms" Type="Self.Room" Multiplicity="*" />
+        <Association Name="FK__GuestsInR__GUEST__4AB81AF0">
+          <End Type="Lab4DbVers1Model.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="Lab4DbVers1Model.GuestsInRoom" Role="GuestsInRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="GUEST_ID" />
+            </Principal>
+            <Dependent Role="GuestsInRoom">
+              <PropertyRef Name="GUEST_ID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Lab4DbVers1Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Guests" EntityType="Self.Guest" />
-          <EntitySet Name="Rooms" EntityType="Self.Room" />
-          <AssociationSet Name="GuestsInRooms" Association="Self.GuestsInRooms">
-            <End Role="Guests" EntitySet="Guests" />
-            <End Role="Rooms" EntitySet="Rooms" />
-          </AssociationSet>
-        </EntityContainer>
+        <Association Name="FK__GuestsInR__ROOM___49C3F6B7">
+          <End Type="Lab4DbVers1Model.Room" Role="Room" Multiplicity="1" />
+          <End Type="Lab4DbVers1Model.GuestsInRoom" Role="GuestsInRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="ROOM_ID" />
+            </Principal>
+            <Dependent Role="GuestsInRoom">
+              <PropertyRef Name="ROOM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -105,27 +140,28 @@
           <EntitySetMapping Name="Guests">
             <EntityTypeMapping TypeName="Lab4DbVers1Model.Guest">
               <MappingFragment StoreEntitySet="Guests">
-                <ScalarProperty Name="GUEST_ID" ColumnName="GUEST_ID" />
                 <ScalarProperty Name="GUEST_NAME" ColumnName="GUEST_NAME" />
+                <ScalarProperty Name="GUEST_ID" ColumnName="GUEST_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuestsInRooms">
+            <EntityTypeMapping TypeName="Lab4DbVers1Model.GuestsInRoom">
+              <MappingFragment StoreEntitySet="GuestsInRooms">
+                <ScalarProperty Name="GUEST_ID" ColumnName="GUEST_ID" />
+                <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rooms">
             <EntityTypeMapping TypeName="Lab4DbVers1Model.Room">
               <MappingFragment StoreEntitySet="Rooms">
-                <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
                 <ScalarProperty Name="ROOM_NAME" ColumnName="ROOM_NAME" />
+                <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="GuestsInRooms" TypeName="Lab4DbVers1Model.GuestsInRooms" StoreEntitySet="GuestsInRooms">
-            <EndProperty Name="Guests">
-              <ScalarProperty Name="GUEST_ID" ColumnName="GUEST_ID" />
-            </EndProperty>
-            <EndProperty Name="Rooms">
-              <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

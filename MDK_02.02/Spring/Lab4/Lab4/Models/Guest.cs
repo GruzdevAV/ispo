@@ -17,13 +17,13 @@ namespace Lab4.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Guest()
         {
-            this.Rooms = new HashSet<Room>();
+            this.GuestsInRooms = new HashSet<GuestsInRoom>();
         }
     
         public int GUEST_ID { get; set; }
         public string GUEST_NAME { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<GuestsInRoom> GuestsInRooms { get; set; }
     }
 }

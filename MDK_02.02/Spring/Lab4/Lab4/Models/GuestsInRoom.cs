@@ -12,18 +12,13 @@ namespace Lab4.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Room
+    public partial class GuestsInRoom
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Room()
-        {
-            this.GuestsInRooms = new HashSet<GuestsInRoom>();
-        }
-    
+        public int ID { get; set; }
         public int ROOM_ID { get; set; }
-        public string ROOM_NAME { get; set; }
+        public int GUEST_ID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GuestsInRoom> GuestsInRooms { get; set; }
+        public virtual Guest Guest { get; set; }
+        public virtual Room Room { get; set; }
     }
 }

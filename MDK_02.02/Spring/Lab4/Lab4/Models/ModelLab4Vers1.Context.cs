@@ -26,6 +26,7 @@ namespace Lab4.Models
         }
     
         public virtual DbSet<Guest> Guests { get; set; }
+        public virtual DbSet<GuestsInRoom> GuestsInRooms { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
     }
 }
