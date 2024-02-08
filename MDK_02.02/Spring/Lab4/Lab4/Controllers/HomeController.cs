@@ -14,15 +14,15 @@ namespace Lab4.Controllers
     public class HomeController : Controller
     {
         private Lab4DbVers1Entities db = new Lab4DbVers1Entities();
-        private static string prevPattern;
+        private static string PrevPattern { get; set; }
         public ActionResult Index(string pattern)
-        {
+         {
             ActionResult res;
-            prevPattern = pattern;
+            PrevPattern = pattern;
             List<SearchResultLine> result;
             result = GetListForTable(pattern);
             ViewBag.SearchData = result;
-            if (string.IsNullOrEmpty(pattern))
+            if (pattern==null)
             {
                 res = View();
             }
@@ -68,7 +68,7 @@ namespace Lab4.Controllers
 
         public FileStreamResult GetWord()
         {
-            var result = GetListForTable(prevPattern);
+            var result = GetListForTable(PrevPattern);
             string[,] data = new string[result.Count + 1, 2];
             data[0, 0] = "Гость";
             data[0, 1] = "Комната";

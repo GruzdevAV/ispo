@@ -30,11 +30,12 @@
 <br />
 <a href="/Home/GetWord">Get Word</a>
 <script>
-    var inputText = document.getElementById("searchName");
+    let inputText = document.getElementById("searchName");
     function changeOption() {
-        var txt = inputText.value;
+        let txt = inputText.value;
+        let escapedTxt = encodeURIComponent(txt);
         $.ajax({
-            url: '/Home/Index?pattern=' + txt,
+            url: '/Home/Index?pattern=' + escapedTxt,
             type: 'GET',
             success: function (data) {
                 $("#SearchResultTable tbody tr").remove();
