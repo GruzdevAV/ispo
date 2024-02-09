@@ -11,32 +11,38 @@ namespace Server
     class ClientHandler
     {
         public TcpClient clientSocket;
-        public Action<string> SendMessage;
+        NetworkStream writerStream;
         public ClientHandler()
         {
         }
-        public ClientHandler(Action<string> action)
+        ~ClientHandler()
         {
-            SendMessage += action;
+            Program.SendMessage -= WriteToServer;
+        }
+        public void WriteToServer(string message)
+        {
+            byte[] dataWrite = Encoding.UTF8.GetBytes($"{message}\r\n");
+            writerStream.Write(dataWrite, 0, dataWrite.Length);
         }
         public void RunClient()
         {
             StreamReader readerStream = new StreamReader(clientSocket.GetStream());
-            NetworkStream writerStream = clientSocket.GetStream();
+            writerStream = clientSocket.GetStream();
+
+            Program.SendMessage += WriteToServer;
+
             string returnData = readerStream.ReadLine();
             string name = returnData;
-            SendMessage?.Invoke("Welcome " + name + " to the server");
+            Program.SendMessage?.Invoke($"Welcome, {name}, to the server!");
             while (true)
             {
                 returnData = readerStream.ReadLine();
                 if (returnData.ToUpper().Contains("/QUIT"))
                 {
-                    SendMessage?.Invoke("Goodbye, " + name);
+                    Program.SendMessage?.Invoke($"Goodbye, {name}!");
                     break;
                 }
-                SendMessage?.Invoke(name + ": " + returnData);
-                byte[] dataWrite = Encoding.ASCII.GetBytes(returnData + "\r\n");
-                writerStream.Write(dataWrite, 0, dataWrite.Length);
+                Program.SendMessage?.Invoke(name + ": " + returnData);
             }
             clientSocket.Close();
         }

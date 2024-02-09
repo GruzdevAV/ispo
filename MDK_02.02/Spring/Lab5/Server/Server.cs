@@ -10,32 +10,30 @@ namespace Server
 {
     class Server
     {
-        public static int nClients;
-        const int ECHO_PORT = 8081;
         public void Launch()
         {
+            Program.SendMessage += (msg) => Console.WriteLine(msg);
+            TcpListener clientListener;
             try
             {
-                TcpListener clientListener = new TcpListener(Global.PORT_NUMBER);
+                clientListener = new TcpListener(Global.PORT_NUMBER);
                 clientListener.Start();
-                Console.WriteLine("Waiting for connections...");
+                Program.SendMessage?.Invoke("Waiting for connections...");
 
-                while (nClients < 3)
+                while (true)
                 {
                     TcpClient client = clientListener.AcceptTcpClient();
                     ClientHandler cHandler = new ClientHandler();
                     cHandler.clientSocket = client;
                     Thread clientThread = new Thread(new ThreadStart(cHandler.RunClient));
                     clientThread.Start();
-                    nClients++;
                 }
-                clientListener.Stop();
             }
             catch (Exception exp)
             {
-                Console.WriteLine("Exception: " + exp.Message);
+                Program.SendMessage?.Invoke("Exception: " + exp.Message);
             }
-            Console.WriteLine("Shutting down...");
+            Program.SendMessage?.Invoke("Shutting down...");
         }
     }
 }

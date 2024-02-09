@@ -14,27 +14,11 @@ namespace Server
     }
     class Program
     {
+        public static Action<string> SendMessage;
         static void Main(string[] args)
         {
-            while (true)
-            {
-                TcpListener clientListener = new TcpListener(8081);
-                clientListener.Start();
-                TcpClient client = clientListener.AcceptTcpClient();
-                StreamReader readerStream = new StreamReader(client.GetStream());
-                var s = readerStream.ReadLine();
-                var t = string.Format(message, DateTime.Now);
-                Console.WriteLine(s);
-                NetworkStream writerStream = client.GetStream();
-                byte[] dataWrite = Encoding.UTF8.GetBytes(t);
-                Console.WriteLine(t);
-                Console.WriteLine(dataWrite);
-                writerStream.Write(dataWrite, 0, dataWrite.Length);
-                Console.WriteLine("Closing socket");
-                client.Close();
-                clientListener.Stop();
-            }
-
+            var server = new Server();
+            server.Launch();
         }
     }
 }

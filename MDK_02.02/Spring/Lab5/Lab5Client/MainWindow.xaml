@@ -19,7 +19,7 @@
             <RowDefinition Height="265*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="tblock_chat" Margin="8" Grid.Row="2" TextWrapping="Wrap" Grid.ColumnSpan="4" FontSize="16" TextAlignment="Justify" Background="#FFE0DCD8"/>
-        <TextBox Height="24" Margin="8,48,8,42" TextWrapping="Wrap" Text="Guest" VerticalAlignment="Center" FontSize="16" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbox_name" Margin="8,0" TextWrapping="Wrap" Text="Guest" VerticalAlignment="Center" FontSize="16" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBlock Text="Имя:" HorizontalAlignment="Right" Margin="0,48,4,44" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Height="22" Width="35"/>
         <Button x:Name="btn_start" Content="Start" Margin="8" VerticalAlignment="Bottom" FontSize="16" Grid.Row="1" Height="25" Grid.ColumnSpan="2" Click="Btn_start_Click"/>
         <Button x:Name="btn_stop" Content="Stop" Margin="8" VerticalAlignment="Bottom" FontSize="16" Grid.Row="1" Height="25" Grid.Column="2" IsEnabled="False" Click="Btn_stop_Click"/>
