@@ -1,0 +1,233 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingSchoolGUIApp" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:DrivingSchoolAPIModels="clr-namespace:DrivingSchoolAPIModels;assembly=DrivingSchoolAPIModels" x:Class="DrivingSchoolGUIApp.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem x:Name="MePage" Header="Обо мне" Loaded="MePage_Loaded">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txtMeLastName" HorizontalAlignment="Left" Margin="378,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" FontSize="18" IsEnabled="False"/>
+                    <Label Content="Фамилия:" HorizontalAlignment="Right" Margin="0,84,421,0" VerticalAlignment="Top" FontSize="18"/>
+                    <TextBox x:Name="txtMeFirstName" HorizontalAlignment="Left" Margin="378,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" FontSize="18" IsEnabled="False"/>
+                    <Label Content="Имя:" HorizontalAlignment="Right" Margin="0,117,421,0" VerticalAlignment="Top" FontSize="18"/>
+                    <TextBox x:Name="txtMePatronym" HorizontalAlignment="Left" Margin="378,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" FontSize="18" IsEnabled="False"/>
+                    <Label Content="Отчество:" HorizontalAlignment="Right" Margin="0,153,421,0" VerticalAlignment="Top" FontSize="18"/>
+                    <TextBox x:Name="txtMePhone" HorizontalAlignment="Left" Margin="378,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206" FontSize="18" IsEnabled="False"/>
+                    <Label Content="Телефон:" HorizontalAlignment="Right" Margin="0,192,421,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Button x:Name="btnMeChange" Content="Изменить" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" FontSize="18" Click="btnMeChange_Click"/>
+                    <Label HorizontalAlignment="Right" Margin="0,10,421,0" VerticalAlignment="Top" Content="Роль:" FontSize="18"/>
+                    <Label HorizontalAlignment="Right" Margin="0,49,421,0" VerticalAlignment="Top" Content="Почта:" FontSize="18"/>
+                    <Label x:Name="lblMeRole" Content="Label" HorizontalAlignment="Left" Margin="378,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Label x:Name="lblMeEmail" Content="Label" HorizontalAlignment="Left" Margin="378,49,0,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Button x:Name="btnMeSaveChanges" Content="Сохранить" HorizontalAlignment="Center" Margin="0,285,0,0" VerticalAlignment="Top" FontSize="18" IsEnabled="False" Click="btnMeSaveChanges_Click" Visibility="Hidden"/>
+                    <Button x:Name="btmMeExit" Content="Выйти" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" FontSize="18" Click="btmMeExit_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="PageRegister" Header="Зарегистрировать пользователя">
+                <Grid Background="#FFE5E5E5">
+                    <RadioButton x:Name="rbStudent" Content="Ученик" HorizontalAlignment="Left" Margin="374,42,0,0" VerticalAlignment="Top" Checked="rbRegister_Checked"/>
+                    <RadioButton x:Name="rbInstructor" Content="Инструктор" HorizontalAlignment="Left" Margin="374,61,0,0" VerticalAlignment="Top" Checked="rbRegister_Checked"/>
+                    <TextBox x:Name="txtRegisterEmail" HorizontalAlignment="Left" Margin="374,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="18" TextChanged="txtRegister_TextChanged"/>
+                    <TextBox x:Name="txtRegisterLastName" HorizontalAlignment="Left" Margin="374,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="18" TextChanged="txtRegister_TextChanged"/>
+                    <TextBox x:Name="txtRegisterFirstName" HorizontalAlignment="Left" Margin="374,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="18" TextChanged="txtRegister_TextChanged"/>
+                    <TextBox x:Name="txtRegisterPatronym" HorizontalAlignment="Left" Margin="374,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="18" TextChanged="txtRegister_TextChanged"/>
+                    <TextBox x:Name="txtRegisterPhone" HorizontalAlignment="Left" Margin="374,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="18" TextChanged="txtRegister_TextChanged"/>
+                    <PasswordBox x:Name="txtRegisterPassword" HorizontalAlignment="Left" Margin="374,266,0,0" VerticalAlignment="Top" Width="206" FontSize="18" PasswordChanged="txtRegister_TextChanged"/>
+                    <Button x:Name="btnRegisterRegister" Content="Зарегистрировать" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" FontSize="18" IsEnabled="False" Click="btnRegisterRegister_Click"/>
+                    <Label Content="Фамилия:" HorizontalAlignment="Right" Margin="0,116,431,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Label Content="Имя:" HorizontalAlignment="Right" Margin="0,149,431,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Label Content="Отчество:" HorizontalAlignment="Right" Margin="0,185,431,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Label Content="Телефон:" HorizontalAlignment="Right" Margin="0,224,431,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Label HorizontalAlignment="Right" Margin="0,42,431,0" VerticalAlignment="Top" Content="Роль:" FontSize="18"/>
+                    <Label HorizontalAlignment="Right" Margin="0,81,431,0" VerticalAlignment="Top" Content="Почта:" FontSize="18"/>
+                    <Label Content="Пароль:" HorizontalAlignment="Right" Margin="0,258,431,0" VerticalAlignment="Top" FontSize="18"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="StudentsPage" Header="Студенты" GotFocus="StudentsPage_GotFocus">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ToolBarTray x:Name="tbtStudents">
+                        <ToolBar x:Name="tbStudentsForAdmin" VerticalAlignment="Top" Panel.ZIndex="1" Grid.ColumnSpan="2">
+                            <Button x:Name="btnAssignInstructorToStudent" Content="Назначить инструктора" Click="btnAssignInstructorToStudent_Click"/>
+                            <ComboBox x:Name="cbStudentsInstructor" HorizontalAlignment="Stretch" Width="127"/>
+                        </ToolBar>
+                        <ToolBar x:Name="tbStudentsForInstructor">
+                            <CheckBox x:Name="cbShowMyStudents" Content="Показать моих студентов" Checked="cbShowMyStudents_Changed" Unchecked="cbShowMyStudents_Changed"/>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ListView x:Name="lvStudents" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Фамилия"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="Имя"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Patronym}" Header="Отчество"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding User.Email}" Header="Почта"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding User.PhoneNumber}" Header="Телефон"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Instructor}" Header="Инструктор"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding NumberOfGrades}" Header="Число оценок"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Grade}" Header="Средняя оценка"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="PageInstructors" Header="Инструкторы" GotFocus="PageInstructors_GotFocus" Height="22" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ToolBarTray x:Name="tbtInstructors">
+                        <ToolBar>
+                            <CheckBox x:Name="cbShowMyInstructor" Content="Показать моего инструктора" Checked="cbShowMyInstructor_Changed" Unchecked="cbShowMyInstructor_Changed"/>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ListView x:Name="lvInstructors" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="3">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Фамилия"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="Имя"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Patronym}" Header="Отчество"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding User.Email}" Header="Почта"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding User.PhoneNumber}" Header="Телефон"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding NumberOfGrades}" Header="Число оценок"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Grade}" Header="Средняя оценка"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="PageSchedules" Header="Расписания" GotFocus="PageSchedules_GotFocus">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ToolBarTray>
+                        <ToolBar x:Name="tbSchedulesForAdmin1" Visibility="Collapsed" >
+                            <Button x:Name="btnAddSchedule" Content="Добавить расписание инструктору" Click="btnAddSchedule_Click"/>
+                            <ComboBox x:Name="cbSchedulesInstructor" HorizontalAlignment="Stretch" Width="127"/>
+                        </ToolBar>
+                        <ToolBar x:Name="tbSchedulesForAdmin2">
+                            <Label Content="Начало:"/>
+                            <DatePicker x:Name="dpSchedulesDate" Width="175" />
+                            <Separator/>
+                            <Label Content="Число занятий:"/>
+                            <Label Content="{Binding ElementName=sliderClasses,Path=Value}"/>
+                            <Slider x:Name="sliderClasses" Width="175" Maximum="7" Minimum="1" SmallChange="1" Value="1" TickPlacement="TopLeft" ValueChanged="sliderClasses_ValueChanged" />
+                        </ToolBar>
+                        <ToolBar x:Name="tbSchedulesForInstructorAndStudent">
+                            <CheckBox x:Name="cbShowMySchedules" Content="Показать мои расписания" IsChecked="False" Checked="cbShowMySchedules_Changed" Unchecked="cbShowMySchedules_Changed"/>
+                        </ToolBar>
+                        <ToolBar x:Name="tbSchedulesForInstructor">
+                            <Button x:Name="btnAddOuterSchedule" Content="Добавить внешнее расписание" Click="btnAddOuterSchedule_Click"/>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ListView x:Name="lvSchedules" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Instructor}" Header="Инструктор"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding DayOfWork}" Header="Дата"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Classes.Length}" Header="Число занятий"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding IsOuterSchedule}" Header="Внешнее"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="PageClasses" Header="Занятия" GotFocus="PageClasses_GotFocus">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ToolBarTray x:Name="tbtClasses">
+                        <ToolBar x:Name="tbClassesForInstructorAndStudent1" >
+                            <Button x:Name="btnAddClass" Content="Записать ученика" Click="btnAddClass_Click"/>
+                            <ComboBox x:Name="cbClassesStudent" HorizontalAlignment="Stretch" Width="127" SelectionChanged="cbClassesStudent_SelectionChanged"/>
+                            <Label Content="в выбранное занятие"/>
+                            <Separator/>
+                        </ToolBar>
+                        <ToolBar x:Name="tbClassesForInstructorAndStudent3">
+                            <Button x:Name="btnCancelClass" Content="Отменить выбранное занятие" Click="btnCancelClass_Click"/>
+                        </ToolBar>
+                        <ToolBar x:Name="tbClassesForInstructorAndStudent4">
+                            <Button x:Name="btnSetGradeForClass" Content="Оставить отметку за занятие" Click="btnSetGradeForClass_Click"/>
+                            <Label Content="оценка:"/>
+                            <ComboBox x:Name="cbGrade" Width="10"/>
+                            <Label Content="с комментарием:"/>
+                            <TextBox x:Name="txtCommentForGrade" MinWidth="20"/>
+                        </ToolBar>
+                        <ToolBar x:Name="tbClassesForInstructorAndStudent5">
+                            <CheckBox x:Name="cbShowMyClasses" Content="Показать мои занятия" Checked="cbShowMyClasses_Changed" Unchecked="cbShowMyClasses_Changed"/>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <ListView x:Name="lvClasses" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="День"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Instructor}" Header="Инструктор"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Student}" Header="Ученик"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding StartTime}" Header="Начало"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding EndTime}" Header="Окончание"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Status}" Header="Статус"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem x:Name="PageGrades" Header="Оценки" GotFocus="PageGrades_GotFocus">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ListView x:Name="lvGradesByMe" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Class}" Header="Занятие"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Class.Student}" Header="Ученик"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Class.Schedule.Instructor}" Header="Инструктор"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Grade}" Header="Оценка"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Comment}" Header="Комментарий"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView x:Name="lvGradesToMe" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="3">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Class}" Header="Занятие"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Class.Student}" Header="Ученик"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Class.Schedule.Instructor}" Header="Инструктор"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Grade}" Header="Оценка"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Comment}" Header="Комментарий"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Оценки от меня" HorizontalAlignment="Center"/>
+                    <Label Content="Оценки на меня" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

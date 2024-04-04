@@ -1,0 +1,45 @@
+﻿<Window x:Class="DrivingSchoolGUIApp.AddOuterSchedule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrivingSchoolGUIApp"
+        mc:Ignorable="d"
+        Title="AddOuterLayout" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Id google-таблицы" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10"/>
+        <TextBox x:Name="tbox_google_sheet_id" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Margin="5,10,5,10" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Название страницы" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Height="21" Margin="0,10,5,10" Width="137" Grid.Row="1"/>
+        <TextBox x:Name="tbox_google_sheet_page_name" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Grid.Row="1" Margin="5,0,5,10" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Диапазон времени" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10" Grid.Row="2"/>
+        <TextBox x:Name="tbox_times_range" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Grid.Row="2" Margin="5,0,5,10" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Диапазон дат" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10" Grid.Row="3"/>
+        <TextBox x:Name="tbox_dates_range" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Grid.Row="3" Margin="5,10,5,10" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Диапазон занятий" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10" Grid.Row="4"/>
+        <TextBox x:Name="tbox_classes_range" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Margin="5,11,5,10" Grid.Row="4" Grid.Column="1" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Пример свободной ячейки" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10" Grid.Row="5"/>
+        <TextBox x:Name="tbox_free_class_range" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Grid.Row="5" Margin="5,8,5,10" Grid.Column="1" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Пример несвободной ячейки" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10" Grid.Row="6"/>
+        <TextBox x:Name="tbox_not_free_class_range" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Grid.Row="6" Margin="5,11,5,10" Grid.Column="1" Grid.RowSpan="1" TextChanged="tbox_TextChanged"/>
+        <TextBlock Text="Ячейка с годом" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextAlignment="Right" Margin="0,10,5,10" Grid.Row="7"/>
+        <TextBox x:Name="tbox_year_range" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Height="24" Grid.Row="7" Margin="5,11,5,10" Grid.Column="1" TextChanged="tbox_TextChanged"/>
+        <Button x:Name="btn_ok" Content="Принять" Grid.Row="8" Click="btn_ok_Click" Margin="20,20,20,20"/>
+        <Button x:Name="btn_cancel" Grid.Column="1" Content="Отменить" Grid.Row="8" Margin="20,20,20,10" IsCancel="True" Click="btn_cancel_Click"/>
+
+    </Grid>
+</Window>
